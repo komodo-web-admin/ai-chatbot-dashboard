@@ -154,7 +154,7 @@ const renderChatModalContent = () => {
     if (!selectedSession) return '';
     const renderMessageBubble = (message) => {
         const isUser = message.message_type === 'human';
-        const bubbleClasses = isUser ? 'bg-green-500 text-white self-end rounded-l-lg rounded-br-lg' : 'bg-slate-200 text-slate-800 self-start rounded-r-lg rounded-bl-lg';
+        const bubbleClasses = isUser ? 'bg-slate-200 text-slate-800 self-end rounded-l-lg rounded-br-lg' : 'bg-green-500 text-white self-start rounded-r-lg rounded-bl-lg';
         const formattedTime = new Date(message.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
         return `<div class="flex flex-col mb-3 ${isUser ? 'items-end' : 'items-start'}"><div class="max-w-xs md:max-w-md lg:max-w-lg p-3 shadow ${bubbleClasses}"><p class="text-sm whitespace-pre-wrap">${message.message}</p></div><span class="text-xs mt-1 ${isUser ? 'text-slate-400 mr-1' : 'text-slate-400 ml-1'}">${formattedTime}</span></div>`;
     };
